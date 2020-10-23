@@ -172,11 +172,11 @@ $(document).ready(function(){
     if(score === 0){
       results.html("If you don't like probelm solving then maybe programming <em><strong>isnt</strong></em> for you...");
     } else if (score > 0 && score < 10){
-      results.html("It sounds like <em>front-end web development</em> would be up your ally! Check out learning <strong>JavaScript</strong>!");
+      results.html("It sounds like <em>front-end web development</em> would be up your alley! Check out learning <strong>JavaScript</strong>!");
     } else if (score === 10){
-      results.html("It sounds like <em>full-stack web development</em> would be up your ally! Check out learning <strong>JavaScript</strong> for front-end and <strong>C#/.NET</strong> for back-end!");
+      results.html("It sounds like <em>full-stack web development</em> would be up your alley! Check out learning <strong>JavaScript</strong> for front-end and <strong>C#/.NET</strong> for back-end!");
     } else {
-      results.html("It sounds like <em>software development</em> is up your ally! Check out learning <strong>Swift</strong> for iOS mobile apps or <strong>Python</strong> for general software!");
+      results.html("It sounds like <em>software development</em> is up your alley! Check out learning <strong>Swift</strong> for iOS mobile apps or <strong>Python</strong> for general software!");
     };
 
     $("#results-page").show();

@@ -37,18 +37,34 @@ option[value = "empty"]{
   display: none;
 }
 
-#submit{
+#submit, .step{
   background-color: #F55959;
   color: #FFFFFF;
   border: 0.5px solid #FFFFFF;
   transition: .2s;
 }
 
-#submit:hover{
+#submit:hover, .step:hover{
   background-color: #FFFFFF;
   color: #F55959;
 }
 
+#submit{
+  width: 100%;
+}
+
+.step{
+  width: 50%;
+  margin: auto;
+}
+
+#next{
+  float: right;
+}
+
+#back{
+  float: left;
+}
 #results-page{
   background-color: #FFFFFF;
   color: #F55959;
@@ -62,4 +78,9 @@ option[value = "empty"]{
 #results-text{
   text-align: center;
   margin-top: 200px;
+}
+
+.display{
+  margin-top: 200px;
+  text-emphasis: center;
 }

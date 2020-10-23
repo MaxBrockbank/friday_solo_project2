@@ -1,12 +1,39 @@
+
 $(document).ready(function(){
 
   //Remove starting page overlay
   $("#start").click(function(){
     $("#starting-page").hide();
+    stepThrough();
   })
-  $("#retake").click(function(){
-    location.reload();
-  })
+
+    //Logic to present one question at a time
+  const questions = $(".form-group")
+  const nextButton = $("#next");
+  const backButton = $("#back");
+  const submitButton = $("#submit");
+  let step = 0;
+
+  function hideAll(){
+    submitButton.hide();
+    questions.hide().removeClass("display");
+  }
+  function stepThrough(){
+    if(step === 0){
+      hideAll();
+      backButton.hide();
+      $("div[value=1]").show().addClass("display");
+    } else if( step === 1){
+      hideAll();
+      $("div[value=2]").show().addClass("display");
+    }
+  }
+
+  nextButton.click(function(){
+    step++;
+    stepThrough()
+  });
+  backButton.click(stepBack());
 
   $("#language-quiz").submit(function(event){
 
@@ -60,8 +87,11 @@ $(document).ready(function(){
     } else {
       results.html("It sounds like <em>software development</em> is up your ally! Check out learning <strong>Swift</strong> for iOS mobile apps or <strong>Python</strong> for general software!");
     };
+
     $("#results-page").show();
+
+    $("#retake").click(function(){
+      location.reload();
+    })
   })
-
-
 })

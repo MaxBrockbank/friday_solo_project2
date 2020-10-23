@@ -104,3 +104,7 @@ option[value = "empty"]{
 .display{
   text-emphasis: center;
 }
+
+.invalid{
+  border: 3px solid black;
+}

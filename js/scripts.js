@@ -18,14 +18,14 @@ $(document).ready(function(){
   function hideAll(){
     submitButton.hide();
     questions.hide().removeClass("display");
-  }
+  };
 
   function showAll(){
     submitButton.show();
     questions.show().removeClass("display");
     nextButton.hide();
     backButton.hide();
-  }
+  };
 
   function stepThrough(){
     if(step === 0){
@@ -50,11 +50,49 @@ $(document).ready(function(){
       heading.text("Is all this correct?");
       heading.removeClass("initialPad").addClass("adjustPad");
     }
-  }
+  };
 
   nextButton.click(function(){
-    step++;
-    stepThrough()
+    if(step === 0){
+      if($("#job").val() === null){
+        $("#job").addClass("invalid");
+      } else { 
+        step++;
+        stepThrough();
+        $("#job").removeClass("invalid");
+      }
+    } else if(step === 1){
+      if($("#breakfast").val() === null){
+        $("#breakfast").addClass("invalid");
+      } else { 
+        step++;
+        stepThrough();
+        $("#breakfast").removeClass("invalid");
+      }
+    } else if(step === 2){
+      if($("input:radio[name=coffee]:checked").val() === undefined){
+        return;
+      } else { 
+        step++;
+        stepThrough();
+      }
+    } else if (step === 3){
+      if($("input:radio[name=stressed]:checked").val() === undefined){
+        return;
+      } else { 
+        step++;
+        stepThrough();
+      }
+    } else if (step === 4){
+      if($("input:radio[name=problem]:checked").val() === undefined){
+        return;
+      } else { 
+        step++;
+        stepThrough();
+        $("#problem").removeClass("invalid");
+      }
+    }
+
   });
   backButton.click(function(){
     step--;
@@ -63,15 +101,15 @@ $(document).ready(function(){
 
   $("#language-quiz").submit(function(event){
 
-    event.preventDefault();
-
     const job = $("#job").val();
     const breakfast = $("#breakfast").val();
     const coffee = $("input:radio[name=coffee]:checked").val();
     const stressed = $("input:radio[name=stressed]:checked").val();
     const problem= $("input:radio[name=problem]:checked").val();
     const results = $("#results");
+    console.log(job, breakfast, coffee, stressed, problem);
     let score = 0;
+    event.preventDefault();
 
     //Scoring Logic
     if(job === "web"){
@@ -104,6 +142,7 @@ $(document).ready(function(){
       score = 0;
     }
 
+    console.log (score);
     if(score === 0){
       results.html("If you don't like probelm solving then maybe programming <strong>isnt</strong> for you...");
     } else if (score > 0 && score < 10){

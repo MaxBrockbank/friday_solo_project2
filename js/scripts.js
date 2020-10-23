@@ -31,6 +31,7 @@ $(document).ready(function(){
     if(step === 0){
       hideAll();
       backButton.hide();
+      nextButton.show();
       $("div[value=1]").show().addClass("display");
     } else if( step === 1){
       hideAll();
@@ -99,6 +100,13 @@ $(document).ready(function(){
     stepThrough();
   });
 
+  $("input:radio[name=stressed]").change(function(){
+    if($("input:radio[name=stressed]:checked").val() === "other"){
+      $("#other-text").show().focus();
+    }
+  })
+
+
   $("#language-quiz").submit(function(event){
 
     const job = $("#job").val();
@@ -107,7 +115,6 @@ $(document).ready(function(){
     const stressed = $("input:radio[name=stressed]:checked").val();
     const problem= $("input:radio[name=problem]:checked").val();
     const results = $("#results");
-    console.log(job, breakfast, coffee, stressed, problem);
     let score = 0;
     event.preventDefault();
 
@@ -142,9 +149,8 @@ $(document).ready(function(){
       score = 0;
     }
 
-    console.log (score);
     if(score === 0){
-      results.html("If you don't like probelm solving then maybe programming <strong>isnt</strong> for you...");
+      results.html("If you don't like probelm solving then maybe programming <em><strong>isnt</strong></em> for you...");
     } else if (score > 0 && score < 10){
       results.html("It sounds like <em>front-end web development</em> would be up your ally! Check out learning <strong>JavaScript</strong>!");
     } else if (score === 10){
@@ -156,7 +162,12 @@ $(document).ready(function(){
     $("#results-page").show();
 
     $("#retake").click(function(){
-      location.reload();
+      $("#language-quiz")[0].reset();
+      $("#results-page").hide();
+      heading.text("Please answer the following question:");
+      heading.removeClass("adjustPad").addClass("initialPad");
+      step = 0;
+      stepThrough();
     })
   })
 })

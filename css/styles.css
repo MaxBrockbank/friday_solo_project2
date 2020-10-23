@@ -51,7 +51,12 @@ padding-bottom: 30px;
 }
 
 .form-group{
-  margin: 0;
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
+.form-check-input{
+align-items: flex-start;  
 }
 
 option[value = "empty"]{
@@ -107,4 +112,13 @@ option[value = "empty"]{
 
 .invalid{
   border: 3px solid black;
+}
+
+.own-line{
+  display: block;
+}
+
+#other-text{
+  display: none;
+  margin-left: 3px;
 }

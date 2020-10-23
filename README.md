@@ -15,7 +15,7 @@ This is a quiz you can take to tell you which programming language would best su
 ## Set-up Instructions
 1. Clone Github repo to desktop.
 2. Open in the browser of your choice.
-* <em>Alternativly</em> you can click [HERE](https://maxbrockbank.github.io/friday_solo_project2/)
+* <em>Alternativly you can click [HERE](https://maxbrockbank.github.io/friday_solo_project2/)</em>
 
 ## Technologies Used
 * HTML
@@ -24,5 +24,5 @@ This is a quiz you can take to tell you which programming language would best su
 
 
 ## Legal
-* Copyright (c) 2020 Max Brockbank
+* Copyright © 2020 Max Brockbank
 * This software is licensed under the MIT license

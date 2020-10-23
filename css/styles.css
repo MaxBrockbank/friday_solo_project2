@@ -32,6 +32,27 @@ body{
   background-color: #F55959;
   color: #FFFFFF;
 }
+#main{
+padding-bottom: 30px;
+}
+
+#heading{
+  text-align: center;
+  margin: none;
+}
+.initialPad{
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.adjustPad{
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.form-group{
+  margin: 0;
+}
 
 option[value = "empty"]{
   display: none;
@@ -55,7 +76,7 @@ option[value = "empty"]{
 
 .step{
   width: 50%;
-  margin: auto;
+  margin-top: 20px;
 }
 
 #next{
@@ -81,6 +102,5 @@ option[value = "empty"]{
 }
 
 .display{
-  margin-top: 200px;
   text-emphasis: center;
 }

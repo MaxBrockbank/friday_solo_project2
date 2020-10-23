@@ -12,12 +12,21 @@ $(document).ready(function(){
   const nextButton = $("#next");
   const backButton = $("#back");
   const submitButton = $("#submit");
+  const heading = $("#heading");
   let step = 0;
 
   function hideAll(){
     submitButton.hide();
     questions.hide().removeClass("display");
   }
+
+  function showAll(){
+    submitButton.show();
+    questions.show().removeClass("display");
+    nextButton.hide();
+    backButton.hide();
+  }
+
   function stepThrough(){
     if(step === 0){
       hideAll();
@@ -25,7 +34,21 @@ $(document).ready(function(){
       $("div[value=1]").show().addClass("display");
     } else if( step === 1){
       hideAll();
+      backButton.show()
       $("div[value=2]").show().addClass("display");
+    } else if( step === 2){
+      hideAll();
+      $("div[value=3]").show().addClass("display");
+    } else if( step === 3){
+      hideAll();
+      $("div[value=4]").show().addClass("display");
+    } else if( step === 4){
+      hideAll();
+      $("div[value=5]").show().addClass("display");
+    } else {
+      showAll();
+      heading.text("Is all this correct?");
+      heading.removeClass("initialPad").addClass("adjustPad");
     }
   }
 
@@ -33,7 +56,10 @@ $(document).ready(function(){
     step++;
     stepThrough()
   });
-  backButton.click(stepBack());
+  backButton.click(function(){
+    step--;
+    stepThrough();
+  });
 
   $("#language-quiz").submit(function(event){
 

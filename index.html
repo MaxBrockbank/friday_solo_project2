@@ -13,64 +13,70 @@
 <div id="starting-page">
   <div id="starting-text">
     <h1>Find Your Language!</h1>
-    <p>Take the following quiz to determine which programming language is best for you to learn:</p>
-    <button class ="btn" id="start">Start Quiz Now!</button>
+    <p>Take the following quiz to determine which programming language is best for you to learn.</p>
+    <button class ="red-btn btn" id="start">Start Quiz Now!</button>
   </div>
 </div>
-<div class="container">
+<div id="results-page">
+  <div id="results-text">
+    <h1></h1>
+    <button class="red-btn btn" id="retake">Retake Quiz</button>
+  </div>
+</div>
+<div class="container-fluid">
   <form id="language-quiz">
     <h3>Please complete the following questions:</h3>
     <div class="form-group">
-      <label for="web">Do you want to be a web or software developer?</label>
-      <select name="web" id="web" class="form-control">
+      <label for="job">Do you want to be a web or software developer?</label>
+      <select name="web" id="job" class="form-control">
         <option selected disabled value="empty"></option>
-        <option value="1">Web Developer</option>
-        <option value="2">Software Developer</option>
+        <option value="web">Web Developer</option>
+        <option value="soft">Software Developer</option>
       </select>
     </div>
     <div class="form-group">
       <label for="breakfast">Waffles or Pancakes?</label>
       <select name="breakfast" id="breakfast" class="form-control">
         <option selected disabled value="empty"></option>
-        <option value="1">Waffles</option>
-        <option value="2">Pancakes</option>
+        <option value="waffle">Waffles</option>
+        <option value="pancake">Pancakes</option>
       </select>
     </div>
     <div class="form-group">
       <label for="">How many cups of coffee do you usually drink per day?</label>
       <div class="form-check">
-        <input type="radio" id="1" value= 1 name="coffee" class="form-check-input">
+        <input type="radio" id="1" value="1cup" name="coffee" class="form-check-input">
         <label for="1" class="form-check-label">1</label>
       </div>
       <div class="form-check">
-        <input type="radio" id="2" value= 2 name="coffee" class="form-check-input">
+        <input type="radio" id="2" value="2cup" name="coffee" class="form-check-input">
         <label for="2" class="form-check-label">2</label>
       </div>
       <div class="form-check">
-        <input type="radio" id="5" value= 5 name="coffee" class="form-check-input">
+        <input type="radio" id="5" value="5cup" name="coffee" class="form-check-input">
         <label for="5" class="form-check-label">5</label>
       </div>
       <div class="form-check">
-        <input type="radio" id="10" value=10 name="coffee" class="form-check-input"> 
+        <input type="radio" id="10" value="10cup" name="coffee" class="form-check-input"> 
         <label for="10" class="form-check-label">Too many</label>
       </div>
     </div>
     <div class="form-group">
       <label for="">When stressed what do you do?</label>
       <div class="form-check">
-        <input type="radio"  id="hair" value = 1 name="stressed" class="form-check-input">
+        <input type="radio"  id="hair" value ="hair" name="stressed" class="form-check-input">
         <label for="hair" class="form-check-label">Pull out your hair</label>
       </div>
       <div class="form-check">
-        <input type="radio"  id="nails" value = 2 name="stressed" class="form-check-input">
+        <input type="radio"  id="nails" value ="nails" name="stressed" class="form-check-input">
         <label for="nails" class="form-check-label">Bite your nails</label>
       </div>
       <div class="form-check">
-        <input type="radio"  id="coffee" value = 3 name="stressed" class="form-check-input">
+        <input type="radio"  id="coffee" value ="coffee" name="stressed" class="form-check-input">
         <label for="coffee" class="form-check-label">Drink more coffee</label>
       </div>
       <div class="form-check">
-        <input type="radio"  id="other" value = 4 name="stressed" class="form-check-input">
+        <input type="radio"  id="other" value ="other" name="stressed" class="form-check-input">
         <label for="other" class="form-check-label">Other</label>
         <input type="text" id="other-text">
       </div>
@@ -82,11 +88,11 @@
         <label for="yes" class="form-check-label">Yes</label>
       </div>
       <div class="form-check">
-        <input type="radio"  id="no" value = "no" name="stressed" class="form-check-input">
+        <input type="radio"  id="no" value = "no" name="problem" class="form-check-input">
         <label for="no" class="form-check-label">No</label>
       </div>
     </div>
-    <button type="submit" class="btn">Get My Results</button>
+    <button type="submit" class="btn" id="submit">Get My Results</button>
   </form>
 </div>
 </body>

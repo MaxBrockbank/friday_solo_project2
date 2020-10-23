@@ -14,13 +14,13 @@
   margin-top: 200px;
 }
 
-#start{
+.btn{
   background-color:#F55959;
   color: white;
   border-radius: 10px;
   transition: .2s;
 }
-#start:hover{
+.btn:hover{
   background-color:white;
   color: #F55959;
 }
@@ -29,3 +29,4 @@
 option[value = "empty"]{
   display: none;
 }
+\

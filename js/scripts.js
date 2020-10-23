@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   //Remove starting page overlay
   $("#start").click(function(){
-    $("#starting-page").hide();
+    $("#starting-page").fadeOut();
     stepThrough();
   })
 
@@ -13,43 +13,55 @@ $(document).ready(function(){
   const backButton = $("#back");
   const submitButton = $("#submit");
   const heading = $("#heading");
+  const main = $("#main");
   let step = 0;
 
   function hideAll(){
     submitButton.hide();
-    questions.hide().removeClass("display");
+    questions.delay(200).fadeOut().removeClass("display");
+    nextButton.delay(200).fadeOut();
+    backButton.delay(200).fadeOut();
   };
+
+  function showStepButtons(){
+    nextButton.fadeIn();
+    backButton.fadeIn();
+  }
 
   function showAll(){
     submitButton.show();
-    questions.show().removeClass("display");
+    questions.show();
     nextButton.hide();
     backButton.hide();
   };
 
   function stepThrough(){
     if(step === 0){
-      hideAll();
+      submitButton.hide();
+      questions.hide();
       backButton.hide();
       nextButton.show();
-      $("div[value=1]").show().addClass("display");
+      $("div[value=1]").show();
     } else if( step === 1){
       hideAll();
-      backButton.show()
-      $("div[value=2]").show().addClass("display");
+      $("div[value=2]").delay(350).fadeIn(200);
+      showStepButtons();
     } else if( step === 2){
       hideAll();
-      $("div[value=3]").show().addClass("display");
+      $("div[value=3]").delay(350).fadeIn(200);
+      showStepButtons();
     } else if( step === 3){
       hideAll();
-      $("div[value=4]").show().addClass("display");
+      $("div[value=4]").delay(350).fadeIn(200);
+      showStepButtons();
     } else if( step === 4){
       hideAll();
-      $("div[value=5]").show().addClass("display");
+      $("div[value=5]").delay(350).fadeIn(200);
+      showStepButtons();
     } else {
-      showAll();
       heading.text("Is all this correct?");
       heading.removeClass("initialPad").addClass("adjustPad");
+      showAll();
     }
   };
 
@@ -57,34 +69,42 @@ $(document).ready(function(){
     if(step === 0){
       if($("#job").val() === null){
         $("#job").addClass("invalid");
-      } else { 
+      } else {
+        main.fadeOut(200);
         step++;
         stepThrough();
         $("#job").removeClass("invalid");
+        main.delay(500).fadeIn(200);
       }
     } else if(step === 1){
       if($("#breakfast").val() === null){
         $("#breakfast").addClass("invalid");
       } else { 
+        main.fadeOut(200);
         step++;
         stepThrough();
         $("#breakfast").removeClass("invalid");
+        main.delay(500).fadeIn(200);
       }
     } else if(step === 2){
       if($("input:radio[name=coffee]:checked").val() === undefined){
         return;
       } else { 
+        main.fadeOut(200);
         step++;
         stepThrough();
+        main.delay(500).fadeIn(200);
       }
     } else if (step === 3){
       if($("input:radio[name=stressed]:checked").val() === undefined){
         return;
       } else { 
+        main.fadeOut(200);
         step++;
         stepThrough();
+        main.delay(500).fadeIn(200);
       }
-    } else if (step === 4){
+    } else {
       if($("input:radio[name=problem]:checked").val() === undefined){
         return;
       } else { 

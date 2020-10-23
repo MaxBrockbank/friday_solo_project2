@@ -10,94 +10,94 @@
   <title>Find Your Language</title>
 </head>
 <body>
-<div id="starting-page">
-  <div id="starting-text">
-    <h1>Find Your Language!</h1>
-    <h4>Take the following quiz to determine which programming language is best for you to learn.</h4>
-    <button class ="red-btn btn" id="start">Start Quiz Now!</button>
+  <div id="starting-page">
+    <div id="starting-text">
+      <h1>Find Your Language!</h1>
+      <h4>Take the following quiz to determine which programming language is best for you to learn.</h4>
+      <button class ="red-btn btn" id="start">Start Quiz Now!</button>
+    </div>
   </div>
-</div>
-<div id="results-page">
-  <div id="results-text">
-    <h1 id ="results"></h1>
-    <button class="red-btn btn" id="retake">Retake Quiz</button>
+  <div id="results-page">
+    <div id="results-text">
+      <h1 id ="results"></h1>
+      <button class="red-btn btn" id="retake">Retake Quiz</button>
+    </div>
   </div>
-</div>
-<div class="container-fluid" id="main">
-  <form id="language-quiz">
-    <h3 id="heading" class="initialPad">Please answer the following question:</h3>
-    <div class="form-group" value="1">
-      <label for="job">Do you want to be a web or software developer?</label>
-      <select name="job" id="job" class="form-control">
-        <option selected disabled value="empty"></option>
-        <option value="web">Web Developer</option>
-        <option value="soft">Software Developer</option>
-      </select>
+  <h3 id="heading" class="initialPad">Please answer the following question:</h3>
+  <div class="container-fluid" id="main">
+    <form id="language-quiz">
+      <div class="form-group" value="1">
+        <label for="job">Do you want to be a web or software developer?</label>
+        <select name="job" id="job" class="form-control">
+          <option selected disabled value="empty"></option>
+          <option value="web">Web Developer</option>
+          <option value="soft">Software Developer</option>
+        </select>
+      </div>
+      <div class="form-group" value="2">
+        <label for="breakfast">Waffles or Pancakes?</label>
+        <select name="breakfast" id="breakfast" class="form-control">
+          <option selected disabled value="empty"></option>
+          <option value="waffle">Waffles</option>
+          <option value="pancake">Pancakes</option>
+        </select>
+      </div>
+      <div class="form-group" value="3">
+        <label class="own-line">How many cups of coffee do you usually drink per day?</label>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="1" value="1cup" name="coffee" class="form-check-input">
+          <label for="1" class="form-check-label">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="2" value="2cup" name="coffee" class="form-check-input">
+          <label for="2" class="form-check-label">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="5" value="5cup" name="coffee" class="form-check-input">
+          <label for="5" class="form-check-label">5</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" id="10" value="10cup" name="coffee" class="form-check-input"> 
+          <label for="10" class="form-check-label">∞</label>
+        </div>
+      </div>
+      <div class="form-group" value="4">
+        <label class="own-line">When stressed what do you do?</label>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="hair" value ="hair" name="stressed" class="form-check-input">
+          <label for="hair" class="form-check-label">Pull out your hair</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="nails" value ="nails" name="stressed" class="form-check-input">
+          <label for="nails" class="form-check-label">Bite your nails</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="coffee" value ="coffee" name="stressed" class="form-check-input">
+          <label for="coffee" class="form-check-label">Drink more coffee</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="other" value ="other" name="stressed" class="form-check-input">
+          <label for="other" class="form-check-label">Other</label>
+          <input type="text" id="other-text" placeholder="(Optional)">
+        </div>
+      </div>
+      <div class="form-group" value="5">
+        <label class="own-line">Do you like problem solving?</label>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="yes" value = "yes" name="problem" class="form-check-input">
+          <label for="yes" class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio"  id="no" value = "no" name="problem" class="form-check-input">
+          <label for="no" class="form-check-label">No</label>
+        </div>
+      </div>
+      <button type="submit" class="btn" id="submit">Get My Results</button>
+    </form>
+    <div class="container controls">
+      <button id="back" class="step">Back</button>
+      <button id="next" class="step">Next</button>
     </div>
-    <div class="form-group" value="2">
-      <label for="breakfast">Waffles or Pancakes?</label>
-      <select name="breakfast" id="breakfast" class="form-control">
-        <option selected disabled value="empty"></option>
-        <option value="waffle">Waffles</option>
-        <option value="pancake">Pancakes</option>
-      </select>
-    </div>
-    <div class="form-group" value="3">
-      <label class="own-line">How many cups of coffee do you usually drink per day?</label>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="1" value="1cup" name="coffee" class="form-check-input">
-        <label for="1" class="form-check-label">1</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="2" value="2cup" name="coffee" class="form-check-input">
-        <label for="2" class="form-check-label">2</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="5" value="5cup" name="coffee" class="form-check-input">
-        <label for="5" class="form-check-label">5</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" id="10" value="10cup" name="coffee" class="form-check-input"> 
-        <label for="10" class="form-check-label">∞</label>
-      </div>
-    </div>
-    <div class="form-group" value="4">
-      <label class="own-line">When stressed what do you do?</label>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="hair" value ="hair" name="stressed" class="form-check-input">
-        <label for="hair" class="form-check-label">Pull out your hair</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="nails" value ="nails" name="stressed" class="form-check-input">
-        <label for="nails" class="form-check-label">Bite your nails</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="coffee" value ="coffee" name="stressed" class="form-check-input">
-        <label for="coffee" class="form-check-label">Drink more coffee</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="other" value ="other" name="stressed" class="form-check-input">
-        <label for="other" class="form-check-label">Other</label>
-        <input type="text" id="other-text">
-      </div>
-    </div>
-    <div class="form-group" value="5">
-      <label class="own-line">Do you like problem solving?</label>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="yes" value = "yes" name="problem" class="form-check-input">
-        <label for="yes" class="form-check-label">Yes</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio"  id="no" value = "no" name="problem" class="form-check-input">
-        <label for="no" class="form-check-label">No</label>
-      </div>
-    </div>
-    <button type="submit" class="btn" id="submit">Get My Results</button>
-  </form>
-  <div class="container">
-    <button id="back" class="step">Back</button>
-    <button id="next" class="step">Next</button>
   </div>
-</div>
 </body>
 </html>

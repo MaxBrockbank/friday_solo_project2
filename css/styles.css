@@ -106,10 +106,6 @@ option[value = "empty"]{
   margin-top: 200px;
 }
 
-.display{
-  text-emphasis: center;
-}
-
 .invalid{
   border: 3px solid black;
 }

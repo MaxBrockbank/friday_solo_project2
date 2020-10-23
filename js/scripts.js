@@ -93,6 +93,7 @@ $(document).ready(function(){
         main.fadeOut(200);
         step++;
         stepThrough();
+        $("#other-text").hide()
         main.delay(500).fadeIn(200);
       }
     } else if (step === 3){
